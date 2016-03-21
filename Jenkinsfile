@@ -3,7 +3,7 @@ node('docker') {
 
   stage 'Initialize Terraform'
   sh  'gcloud docker -a'
-  sh 'terraform remote config -backend=etcd -backend-config="path=app1/prod/terraform.tfstate" -backend-config="endpoints=http://etcd0:2379"'
+  sh 'terraform remote config -backend=etcd -backend-config="path=app1/prod/terraform.tfstate" -backend-config="endpoints=http://etcd0:2379 http://etcd1:2379 http://etcd2:2379"'
   
   stage 'terraform plan'
   sh 'echo 0 > .tfexit'
