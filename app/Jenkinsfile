@@ -3,9 +3,12 @@ node('docker') {
   dir('app') {
     stage 'Run tests'
     docker.image('golang:1.6').inside {
-      sh('go get -d -v')
-      sh('go test')
+      sh 'go get -d -v'
+      sh 'go test'
     }
+
+    stage 'Make binary'
+    sh 'make bin'
 
     stage 'Build image with Packer'
     def revision = rev()
