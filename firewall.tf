@@ -8,4 +8,5 @@ resource "google_compute_firewall" "www" {
     }
 
     target_tags = ["www"]
+    source_ranges = ["0.0.0.0/0"]
 }
