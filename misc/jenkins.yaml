@@ -1,0 +1,250 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ssl-proxy-secret
+data:
+  htpasswd: |
+    amVua2luczokYXByMSRDaW9MaWhUOSRzZEh3dGRDLlFaRjdPUTRzQ1BoaEgwCg==
+  proxycert: |
+    LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUI3VENDQVZZQ0NRRGdWKzQ2ck9qVHBEQU5C
+    Z2txaGtpRzl3MEJBUXNGQURBN01Rc3dDUVlEVlFRR0V3SjEKY3pFTE1Ba0dBMVVFQ0F3Q2QyRXhF
+    REFPQmdOVkJBY01CM05sWVhSMGJHVXhEVEFMQmdOVkJBb01CR1YyWVc0dwpIaGNOTVRZd016RTNN
+    VGswTXpFeldoY05NVGN3TXpFM01UazBNekV6V2pBN01Rc3dDUVlEVlFRR0V3SjFjekVMCk1Ba0dB
+    MVVFQ0F3Q2QyRXhFREFPQmdOVkJBY01CM05sWVhSMGJHVXhEVEFMQmdOVkJBb01CR1YyWVc0d2da
+    OHcKRFFZSktvWklodmNOQVFFQkJRQURnWTBBTUlHSkFvR0JBT1J5RW5pUE5MWmE0djZUV29hY0l0
+    VHFkRDU2eWlubAo1OUFvTjVwMGRrZHRRTTNXdlUxcUxocml3a0xzcEE5MDBJVWRpaEpwc0tGMlcv
+    aEVIM0JwZ1hFMW5WS2hnUnZqCmYzQ2g4REJPcGVHUEpJVjVCZmtHVCtnRkZtMnRESDlGK1pYQlNL
+    ak50alliZnpNcGJZVVhnam5yMUNjMU0rMVgKMWNkTUJoTWlGQUZaQWdNQkFBRXdEUVlKS29aSWh2
+    Y05BUUVMQlFBRGdZRUF3WndmTk1LRm5rNTZqamdNczhNUAplVmFDbWlrbWpkQnNjRjJnL3pqQWhu
+    VlRteWNablcrZHZXdlVERzNFM1RQUGlqekJTdE1aUmU3bFVEZ0owNzJFCmRkdy9mV0NlSWZSQXo5
+    KzErWGpUSDFlTEVhbHlBQTNJNDIxSisvbFZteHFkUlNCOTN2N282b0ZKWXRFSTF6Y1AKNVRNL2c5
+    ZDJqRmFraFAva0lzL3hwRlk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  proxykey: |
+    LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlDWEFJQkFBS0JnUURrY2hKNGp6UzJX
+    dUwrazFxR25DTFU2blErZXNvcDVlZlFLRGVhZEhaSGJVRE4xcjFOCmFpNGE0c0pDN0tRUGROQ0ZI
+    WW9TYWJDaGRsdjRSQjl3YVlGeE5aMVNvWUViNDM5d29mQXdUcVhoanlTRmVRWDUKQmsvb0JSWnRy
+    UXgvUmZtVndVaW96YlkyRzM4ektXMkZGNEk1NjlRbk5UUHRWOVhIVEFZVEloUUJXUUlEQVFBQgpB
+    b0dBQ1RFaDF5SUQvL1ptUGRJV0NXYU03RDVHMFNERnM2dmhpUG1sU3h5MmlhYzJ2VkdQcW1iRVZp
+    YWJwRys3CkpqZ1FEOXNoYkI0K2tqQ2VBTDVVK1lQMVJsSm8xRHlFV0RsdmJHU3dYVnNWY0Q5QjVS
+    bFhXOXpDSEFZQnF4WTUKNGMvRG1BcGRlaGRNOHBFR0pyR2FrMk83U2ZReHFNTnl0L3BKUngyZW5u
+    ci9xcFVDUVFEeXI3ZThJcTlEV2p2bQpjUGJ2TDJXeEFLb2loK3FkSms3T3ZGUmVwRXh6QlU1RFgv
+    UEZrRWxFaHVOajNtR0pac3drb0NxT3Q2TmRnR29vClhwb044RHlqQWtFQThQcGJYejYwU3IvR0pi
+    bmJLV2pEY2ZxcEJ3bFlxbWNySE1DMEQrUDR6ZmE1cVhLZEV4MU0KUmFzcEQ0SUlvbFM4ajJ0c2Vl
+    RUVSaUROOU1wUW9pZE4wd0pCQUx3dlc5Y3NRaUdGSC92Q1R3a01CTnZyT3dLSgp5SGpSa3J5bXR2
+    bW9oNHVOYXJHOS91YU15dk96Y1RJbzZCTkd2amdNWnRQQ1BKQ3RtaVB4cjUzdFV1Y0NRQzVyCkMw
+    NjlkVjB3czZwd3NwYTNaMjU5S2pJQXl1T0lHL1hkNk5GbXlIWmtJRDlUcEk0YUJxY2s0VFByaUY0
+    OGxGWE0KQzRrdW52UWpQWWo1cjY2TWc2RUNRQ3YxSHlCUUVrRXBpNnQyYktmQ1pWOUsyMDA4VHhP
+    TVEza01MeDBlNmk1OQpmS1hHb0NJTUs2N09KMWxSejROSUJLdTNDbVp4eGszYURXckkrSkt3VC9N
+    PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+  dhparam: |
+    LS0tLS1CRUdJTiBESCBQQVJBTUVURVJTLS0tLS0KTUlJQkNBS0NBUUVBanN5bkYvVUJnRktRN2JM
+    QVZrd0paVGVsTE5idG5hTDZBT1BFNDhWV2ZqZ01sMnhRZGR4Qwp6S1NBVnVCcUlhRkNSYnRNOUo3
+    enZhZmZudkc3S3k2VG1MWEpRWU5LcHdwdDg4cVcyTTVrR1ZQeUllakhNMW5JClhUWHZTTXM2YkdW
+    MmVKWGh3aUt6TEFNM3I0My9iYjJTNFFIYlROTnVhZ0xRbkRlZnJWd1JGZU52KzBha1FKdW0KUGNG
+    alRXSmRQbFdTL0wraDBPblR2ZW1qelVBV3ZTMVlwWHJyaHIrV2o4ZHB4WUdlQ3JFNlpCcjhaVDRB
+    U1VKWQpMUHNYbUZZUWsrcmRXNWtqK3ZFNkozTThrbDJLQXJqUFVkaCtRb0I1NjdhQ2tFcjZFSzly
+    SmhvSktOKzhiMElHCkUwM3A3VkswckxPeFJVSlAyNEprUWwvNFVoaC80K2Vlb3dJQkFnPT0KLS0t
+    LS1FTkQgREggUEFSQU1FVEVSUy0tLS0tCg==
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins
+  labels:
+    name: jenkins
+    role: frontend
+spec:
+  ports:
+  - name: ui
+    port: 8080
+    targetPort: jenkins-http
+    protocol: TCP
+  - name: discovery
+    port: 50000
+    targetPort: jenkins-disco
+    protocol: TCP
+  selector:
+    name: jenkins
+    role: leader
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-ssl-proxy
+  labels:
+    name: nginx
+    role: ssl-proxy
+spec:
+  ports:
+  - name: https
+    port: 443
+    targetPort: ssl-proxy-https
+    protocol: TCP
+  - name: http
+    port: 80
+    targetPort: ssl-proxy-http
+    protocol: TCP
+  selector:
+    name: nginx
+    role: ssl-proxy
+  type: LoadBalancer
+
+---
+
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: jenkins-leader
+  labels:
+    name: jenkins
+    role: leader
+spec:
+  replicas: 1
+  selector:
+    name: jenkins
+    role: leader
+  template:
+    metadata:
+      name: jenkins-leader
+      labels:
+        name: jenkins
+        role: leader
+    spec:
+      containers:
+      - name: jenkins
+        image: gcr.io/cloud-solutions-images/jenkins-gcp-leader:master-6296571
+        command:
+        - /usr/local/bin/start.sh
+        env:
+        - name: GCS_RESTORE_URL
+          value: DISABLED
+        ports:
+        - name: jenkins-http
+          containerPort: 8080
+        - name: jenkins-disco
+          containerPort: 50000
+
+---
+
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: jenkins-builder
+  labels:
+    name: jenkins
+    role: agent
+    labels: docker
+spec:
+  replicas: 1
+  selector:
+    name: jenkins
+    role: agent
+    labels: docker
+  template:
+    metadata:
+      name: jenkins-builder
+      labels:
+        name: jenkins
+        role: agent
+        labels: docker
+    spec:
+      containers:
+      - name: jenkins-builder
+        image: gcr.io/evandbrown17/terraform-packer-builder:latest
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        command:
+        - sh
+        - -c
+        - /usr/local/bin/jenkins-docker-supervisor.sh -master http://$JENKINS_SERVICE_HOST:$JENKINS_SERVICE_PORT_UI -tunnel $JENKINS_SERVICE_HOST:$JENKINS_SERVICE_PORT_DISCOVERY -executors 1 -labels docker
+        env:
+        - name: HOME
+          value: /home/jenkins-agent
+        volumeMounts:
+          - mountPath: /home/jenkins-agent
+            name: jenkins
+          - mountPath: /var/lib/docker
+            name: docker-lib
+          - mountPath: /var/run/docker.sock
+            name: docker-sock
+          - mountPath: /usr/bin/docker
+            name: docker-bin
+          - mountPath: /tmp
+            name: docker-tmp
+      volumes:
+        - name: jenkins
+          hostPath:
+            path: /home/jenkins-agent
+        - name: docker-lib
+          hostPath:
+            path: /var/lib/docker
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+        - name: docker-bin
+          hostPath:
+            path: /usr/bin/docker
+        - name: docker-tmp
+          hostPath:
+            path: /tmp
+
+---
+
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: nginx-ssl-proxy
+  labels:
+    name: nginx
+    role: ssl-proxy
+spec:
+  replicas: 1
+  selector:
+    name: nginx
+    role: ssl-proxy
+  template:
+    metadata:
+      name: nginx-ssl-proxy
+      labels:
+        name: nginx
+        role: ssl-proxy
+    spec:
+      containers:
+      - name: nginx-ssl-proxy
+        image: gcr.io/cloud-solutions-images/nginx-ssl-proxy:master-cc00da0 
+        resources:
+          limits:
+            memory: "768Mi"
+            cpu: "500m"
+        command:
+        - /bin/bash
+        - /usr/bin/start.sh
+        env:
+        - name: SERVICE_HOST_ENV_NAME
+          value: JENKINS_SERVICE_HOST
+        - name: SERVICE_PORT_ENV_NAME
+          value: JENKINS_SERVICE_PORT_UI
+        - name: ENABLE_BASIC_AUTH
+          value: 'false'
+        - name: ENABLE_SSL
+          value: 'true'
+
+        ports:
+        - name: ssl-proxy-http
+          containerPort: 80
+        - name: ssl-proxy-https
+          containerPort: 443
+        volumeMounts:
+        - name: secrets
+          mountPath: /etc/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: ssl-proxy-secret
