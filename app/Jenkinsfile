@@ -1,0 +1,19 @@
+node('docker') {
+  checkout scm
+  dir('app') {
+    stage 'Run tests'
+    docker.image('golang:1.6').inside {
+      sh('go get -d -v')
+      sh('go test')
+    }
+
+    stage 'Build image with Packer'
+    def revision = rev()
+    sh 'packer build -var project_id=evandbrown17 -var revision=foo packer.json'
+  }
+}
+
+def rev() {
+  sh 'git rev-parse --short HEAD > .rev'
+  return readFile('.rev').trim()
+}
