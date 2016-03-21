@@ -8,7 +8,10 @@ node('docker') {
     }
 
     stage 'Make binary'
-    sh 'make bin'
+    sh 'mkdir -p out'
+	sh 'docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.6 go get -u ; go build'
+	sh 'mv app out/'
+
 
     stage 'Build image with Packer'
     def revision = rev()
