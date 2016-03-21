@@ -9,6 +9,24 @@ resource "google_compute_subnetwork" "default-us-east1" {
     region = "us-east1"
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
 resource "google_compute_subnetwork" "default-us-central1" {
     name = "default-us-central1"
     ip_cidr_range = "192.168.0.0/16"
@@ -24,3 +42,4 @@ resource "google_compute_route" "default-floating-vip" {
     next_hop_instance_zone = "us-central1-f"
     priority = 100
 }
+**/
