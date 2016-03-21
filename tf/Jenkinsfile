@@ -17,6 +17,6 @@ node('docker') {
 }
 
 def changes() {
-  def matcher = readFile('tf/.tfexit') =~ '^2$'
+  def matcher = readFile('.tfexit') =~ '^2$'
   matcher ? matcher[0] : null
 }
