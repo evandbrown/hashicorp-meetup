@@ -2,14 +2,14 @@
 state:
 	@rm -f .terraform/*.tfstate && terraform remote config -backend=consul -backend-config="address=consul0:8500" -backend-config="path=tf"
 
-show: state
+show:
 	terraform show
 
-destroy: state
+destroy:
 	terraform destroy
 
-plan: state
+plan:
 	terraform plan
 
-apply: state
+apply:
 	terraform apply
