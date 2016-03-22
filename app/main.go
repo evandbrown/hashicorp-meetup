@@ -75,7 +75,7 @@ func backendMode(port int) {
 		raw, _ := httputil.DumpRequest(r, true)
 		i.LBRequest = string(raw)
 		resp, _ := json.Marshal(i)
-		fmt.Fprintf(w, "%s", resp)
+		fmt.Fprintf(w, "%s\n", resp)
 	})
 	http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
