@@ -15,7 +15,7 @@ resource "google_compute_instance" "default" {
     }
 
     network_interface {
-        network = "${google_compute_network.default.name}"
+        subnetwork = "${google_compute_subnetwork.default-us-central1.name}"
         access_config {
         }
     }
