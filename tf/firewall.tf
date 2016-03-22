@@ -4,7 +4,7 @@ resource "google_compute_firewall" "www" {
 
     allow {
         protocol = "tcp"
-        ports = ["443"]
+        ports = ["443", "8080"]
     }
 
     target_tags = ["www"]
