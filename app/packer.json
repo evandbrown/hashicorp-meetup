@@ -1,6 +1,6 @@
 {
   "variables": {
-    "revision": "",
+    "revision": "{{timestamp}}",
     "account_file": "",
     "project_id": "null",
     "base_name": "null"
