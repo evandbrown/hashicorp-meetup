@@ -1,0 +1,223 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: consul
+    consul_node: consul0
+  name: consul0
+spec:
+  containers:
+    - name: consul
+      command: [ "/bin/start", "-server", "-bootstrap-expect", "3", "-retry-join", "consul0", "-retry-join", "consul1", "-retry-join", "consul2"]
+      image: progrium/consul:latest
+      imagePullPolicy: Always
+      ports:
+      - containerPort: 8500
+        name: ui-port
+      - containerPort: 8400
+        name: alt-port
+      - containerPort: 53
+        name: udp-port
+      - containerPort: 443
+        name: https-port
+      - containerPort: 8080
+        name: http-port
+      - containerPort: 8301
+        name: serflan
+      - containerPort: 8302
+        name: serfwan
+      - containerPort: 8600
+        name: consuldns
+      - containerPort: 8300
+        name: server
+          
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: consul
+    consul_node: consul1
+  name: consul1
+spec:
+  containers:
+    - name: consul
+      command: [ "/bin/start", "-server", "-bootstrap-expect", "3", "-retry-join", "consul0", "-retry-join", "consul1", "-retry-join", "consul2"]
+      image: progrium/consul:latest
+      imagePullPolicy: Always
+      ports:
+      - containerPort: 8500
+        name: ui-port
+      - containerPort: 8400
+        name: alt-port
+      - containerPort: 53
+        name: udp-port
+      - containerPort: 443
+        name: https-port
+      - containerPort: 8080
+        name: http-port
+      - containerPort: 8301
+        name: serflan
+      - containerPort: 8302
+        name: serfwan
+      - containerPort: 8600
+        name: consuldns
+      - containerPort: 8300
+        name: server
+          
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: consul
+    consul_node: consul2
+  name: consul2
+spec:
+  containers:
+    - name: consul
+      command: [ "/bin/start", "-server", "-bootstrap-expect", "3", "-retry-join", "consul0", "-retry-join", "consul1", "-retry-join", "consul2"]
+      image: progrium/consul:latest
+      imagePullPolicy: Always
+      ports:
+      - containerPort: 8500
+        name: ui-port
+      - containerPort: 8400
+        name: alt-port
+      - containerPort: 53
+        name: udp-port
+      - containerPort: 443
+        name: https-port
+      - containerPort: 8080
+        name: http-port
+      - containerPort: 8301
+        name: serflan
+      - containerPort: 8302
+        name: serfwan
+      - containerPort: 8600
+        name: consuldns
+      - containerPort: 8300
+        name: server
+          
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    consul_node: consul0
+  name: consul0
+spec:
+  ports:
+    - port: 8500
+      targetPort: 8500
+      name: ui-port
+    - port: 8400
+      targetPort: 8400
+      name: alt-port
+    - port: 53
+      targetPort: 53
+      name: udp-port
+    - port: 443
+      targetPort: 443
+      name: https-port
+    - port: 8080
+      targetPort: 8080
+      name: http-port
+    - port: 8301
+      targetPort: 8301
+      name: serflan
+    - port: 8302
+      targetPort: 8302
+      name: serfwan
+    - port: 8600
+      targetPort: 8600
+      name: consuldns
+    - port: 8300
+      targetPort: 8300
+      name: server
+  selector:
+    consul_node: consul0
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    consul_node: consul1
+  name: consul1
+spec:
+  ports:
+    - port: 8500
+      targetPort: 8500
+      name: ui-port
+    - port: 8400
+      targetPort: 8400
+      name: alt-port
+    - port: 53
+      targetPort: 53
+      name: udp-port
+    - port: 443
+      targetPort: 443
+      name: https-port
+    - port: 8080
+      targetPort: 8080
+      name: http-port
+    - port: 8301
+      targetPort: 8301
+      name: serflan
+    - port: 8302
+      targetPort: 8302
+      name: serfwan
+    - port: 8600
+      targetPort: 8600
+      name: consuldns
+    - port: 8300
+      targetPort: 8300
+      name: server
+  selector:
+    consul_node: consul1
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    consul_node: consul2
+  name: consul2
+spec:
+  ports:
+    - port: 8500
+      targetPort: 8500
+      name: ui-port
+    - port: 8400
+      targetPort: 8400
+      name: alt-port
+    - port: 53
+      targetPort: 53
+      name: udp-port
+    - port: 443
+      targetPort: 443
+      name: https-port
+    - port: 8080
+      targetPort: 8080
+      name: http-port
+    - port: 8301
+      targetPort: 8301
+      name: serflan
+    - port: 8302
+      targetPort: 8302
+      name: serfwan
+    - port: 8600
+      targetPort: 8600
+      name: consuldns
+    - port: 8300
+      targetPort: 8300
+      name: server
+  selector:
+    consul_node: consul2
