@@ -9,8 +9,10 @@ node('docker') {
       sh 'mkdir -p out; mv app out/'
     }
 
-    stage 'Build image with Packer'
-    sh 'packer build -var project_id=evandbrown17 -var revision=foo packer.json'
+    stage 'Build images with Packer'
+    def revision = rev()
+    sh 'packer build -var project_id=evandbrown17 -var revision=${revision} packer.json'
+    sh 'gcloud docker push gcr.io/evandbrown17/myapp:${revision}'
   }
 }
 
