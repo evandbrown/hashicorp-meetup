@@ -2,7 +2,7 @@ node('docker') {
   checkout scm
   dir('tf') {
     stage 'Initialize Terraform'
-    sh 'terraform remote config -backend=consul -backend-config="address=consul0:8080" -backend-config="path=tf"'
+    sh 'terraform remote config -backend=consul -backend-config="address=consul0:80" -backend-config="path=tf"'
     
     stage 'terraform plan'
     sh 'echo 0 > .tfexit'
