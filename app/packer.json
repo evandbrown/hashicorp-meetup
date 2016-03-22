@@ -2,7 +2,8 @@
   "variables": {
     "revision": "",
     "account_file": "",
-    "project_id": "null"
+    "project_id": "null",
+    "base_name": "null"
   },
   "builders": [
     {
@@ -11,7 +12,7 @@
       "project_id": "{{user `project_id`}}",
       "source_image": "ubuntu-1404-trusty-v20160314",
       "zone": "us-central1-f",
-      "image_name": "myapp-{{timestamp}}-{{user `revision`}}"
+      "image_name": "{{user `base_name`}}-{{user `revision`}}"
     },
     {
       "type": "docker",
@@ -36,7 +37,7 @@
         [
             {
                 "type": "docker-tag",
-                "repository": "gcr.io/{{user `project_id`}}/myapp",
+                "repository": "gcr.io/{{user `project_id`}}/{{user `base_name`}}",
                 "tag": "{{user `revision`}}",
                 "only": ["docker"]
             }
