@@ -1,6 +1,7 @@
 node('docker') {
   checkout scm
-   sh 'git rev-parse --short HEAD'
+  sh 'git rev-parse --short HEAD > .rev'
+  def rev = readFile('.rev')
 
   dir('app') {
     stage 'Run tests, build bin'
@@ -12,14 +13,7 @@ node('docker') {
     }
 
     stage 'Build images with Packer'
-    def revision = rev()
-    echo $revision
-    sh 'packer build -var project_id=evandbrown17 -var revision=${revision} packer.json'
-    sh 'gcloud docker push gcr.io/evandbrown17/myapp:${revision}'
+    sh 'packer build -var project_id=evandbrown17 -var revision=${rev} packer.json'
+    sh 'gcloud docker push gcr.io/evandbrown17/myapp:${rev}'
   }
-}
-
-def rev() {
-  sh 'git rev-parse --short HEAD > .rev'
-  return readFile('.rev').trim()
 }
