@@ -3,9 +3,9 @@ resource "google_compute_instance" "default" {
     machine_type = "n1-standard-1"
     zone = "us-central1-f"
     tags = ["www"]
-
+ 
     disk {
-        image = "myapp-1458614153"
+        image = "myapp-12dd23e"
     }
 
     // Local SSD disk

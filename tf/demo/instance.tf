@@ -5,13 +5,13 @@ resource "google_compute_instance" "default" {
     tags = ["www"]
 
     disk {
-        image = "myapp-1458614153"
+        image = "myapp-12dd23e"
     }
 
     // Local SSD disk
     disk {
         type = "local-ssd"
-        scratch = true
+        scratch = "true"
     }
 
     network_interface {
